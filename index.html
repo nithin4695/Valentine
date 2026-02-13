@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #ff6347;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heart">❤️ Happy Valentine's Day! ❤️</h1>
+    <p>Click the button below to send a special message!</p>
+    <button onclick="sendMessage()">Send Love</button>
+
+    <script>
+        function sendMessage() {
+            alert("Wishing you lots of love and happiness this Valentine's Day!");
+        }
+    </script>
+</body>
+</html>
