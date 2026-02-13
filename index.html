@@ -1,42 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
-    <style>
-        body {
-            background-color: #ffcccb;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .heart {
-            color: red;
-            font-size: 50px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #ff6347;
-            border: none;
-            color: white;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #ff4500;
-        }
-    </style>
-</head>
-<body>
-    <h1 class="heart">❤️ Happy Valentine's Day! ❤️</h1>
-    <p>Click the button below to send a special message!</p>
-    <button onclick="sendMessage()">Send Love</button>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Valentine's Day ❤️</title><style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
 
-    <script>
-        function sendMessage() {
-            alert("Wishing you lots of love and happiness this Valentine's Day!");
-        }
-    </script>
-</body>
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 40px 60px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        animation: fadeIn 2s ease;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+
+    button {
+        background: white;
+        color: #ff4b6e;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: #ff4b6e;
+        color: white;
+    }
+
+    .heart {
+        position: absolute;
+        color: rgba(255,255,255,0.8);
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style></head><body><div class="card">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <p>You make my world brighter, warmer, and so much sweeter.</p>
+    <button onclick="showMessage()">Click for a surprise</button>
+</div><script>
+function showMessage() {
+    alert("I love you more than words can say 💖");
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script></body>
 </html>
